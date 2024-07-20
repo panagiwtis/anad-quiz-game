@@ -229,8 +229,6 @@
                     try {
                         const response = await fetch(`${serverUrl}/results`);
                         const results = await response.json();
-                        debugger
-                        alert('Results: ' + JSON.stringify(data));
                         document.getElementById('teamA-q1-true').value = results.teamA.q1.true;
                         document.getElementById('teamA-q1-false').value = results.teamA.q1.false;
                         document.getElementById('teamA-q2-true').value = results.teamA.q2.true;

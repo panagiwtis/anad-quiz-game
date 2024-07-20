@@ -63,7 +63,7 @@
         }
 
         .true-row {
-            border: 4px solid green;
+            border: 4px dotted rgb(64, 208, 64);
         }
     </style>
 </head>
@@ -229,7 +229,13 @@
 
     <script>
         const serverUrl = 'https://anad-quiz-game-backend.vercel.app'; // Replace with your deployed server URL
-
+        const answers = {
+            q1:true,
+            q2:false,
+            q3:true,
+            q4:false,
+            q5:false
+        }
         async function vote(question, answer) {
             try {
                 debugger
@@ -263,7 +269,7 @@
                         document.getElementById('teamA-q1-false').checked = !!results.teamA.q1.false;
                         const rowTeamAQ1 = document.getElementById('teamA-q1');
 
-                        if (results.teamA.q1.true > results.teamA.q1.false) {
+                        if ((answers.q1 && !!results.teamA.q1.true) || (!answers.q1 && !!results.teamA.q1.false == false)) {
                             rowTeamAQ1.classList.add('true-row');
                         } else {
                             rowTeamAQ1.classList.remove('true-row');
@@ -273,7 +279,7 @@
                         document.getElementById('teamA-q2-false').checked = !!results.teamA.q2.false;
                         const rowTeamAQ2 = document.getElementById('teamA-q2');
 
-                        if (results.teamA.q2.true > results.teamA.q2.false) {
+                        if ((answers.q2 && !!results.teamA.q2.true) || (!answers.q2 && !!results.teamA.q2.false == false)) {
                             rowTeamAQ2.classList.add('true-row');
                         } else {
                             rowTeamAQ2.classList.remove('true-row');
@@ -283,7 +289,7 @@
                         document.getElementById('teamA-q3-false').checked = !!results.teamA.q3.false;
                         const rowTeamAQ3 = document.getElementById('teamA-q3');
 
-                        if (results.teamA.q3.true > results.teamA.q3.false) {
+                        if ((answers.q3 && !!results.teamA.q3.true) || (!answers.q3 && !!results.teamA.q3.false == false)) {
                             rowTeamAQ3.classList.add('true-row');
                         } else {
                             rowTeamAQ3.classList.remove('true-row');
@@ -293,7 +299,7 @@
                         document.getElementById('teamA-q4-false').checked = !!results.teamA.q4.false;
                         const rowTeamAQ4 = document.getElementById('teamA-q4');
 
-                        if (results.teamA.q4.true > results.teamA.q4.false) {
+                        if ((answers.q4 && !!results.teamA.q4.true) || (!answers.q4 && !!results.teamA.q4.false == false)) {
                             rowTeamAQ4.classList.add('true-row');
                         } else {
                             rowTeamAQ4.classList.remove('true-row');
@@ -303,7 +309,7 @@
                         document.getElementById('teamA-q5-false').checked = !!results.teamA.q5.false;
                         const rowTeamAQ5 = document.getElementById('teamA-q5');
 
-                        if (results.teamA.q5.true > results.teamA.q5.false) {
+                        if ((answers.q5 && !!results.teamA.q5.true) || (!answers.q5 && !!results.teamA.q5.false == false)) {
                             rowTeamAQ5.classList.add('true-row');
                         } else {
                             rowTeamAQ5.classList.remove('true-row');
@@ -313,7 +319,7 @@
                         document.getElementById('teamB-q1-false').checked = !!results.teamB.q1.false;
                         const rowteamBQ1 = document.getElementById('teamB-q1');
 
-                        if (results.teamB.q1.true > results.teamB.q1.false) {
+                        if ((answers.q1 && !!results.teamB.q1.true) || (!answers.q1 && !!results.teamB.q1.false == false)) {
                             rowteamBQ1.classList.add('true-row');
                         } else {
                             rowteamBQ1.classList.remove('true-row');
@@ -323,7 +329,7 @@
                         document.getElementById('teamB-q2-false').checked = !!results.teamB.q2.false;
                         const rowteamBQ2 = document.getElementById('teamB-q2');
 
-                        if (results.teamB.q2.true > results.teamB.q2.false) {
+                        if ((answers.q2 && !!results.teamB.q2.true) || (!answers.q2 && !!results.teamB.q2.false == false)) {
                             rowteamBQ2.classList.add('true-row');
                         } else {
                             rowteamBQ2.classList.remove('true-row');
@@ -333,7 +339,7 @@
                         document.getElementById('teamB-q3-false').checked = !!results.teamB.q3.false;
                         const rowteamBQ3 = document.getElementById('teamB-q3');
 
-                        if (results.teamB.q3.true > results.teamB.q3.false) {
+                        if ((answers.q3 && !!results.teamB.q3.true) || (!answers.q3 && !!results.teamB.q3.false == false)) {
                             rowteamBQ3.classList.add('true-row');
                         } else {
                             rowteamBQ3.classList.remove('true-row');
@@ -343,7 +349,7 @@
                         document.getElementById('teamB-q4-false').checked = !!results.teamB.q4.false;
                         const rowteamBQ4 = document.getElementById('teamB-q4');
 
-                        if (results.teamB.q4.true > results.teamB.q4.false) {
+                        if ((answers.q4 && !!results.teamB.q4.true) || (!answers.q4 && !!results.teamB.q4.false == false)) {
                             rowteamBQ4.classList.add('true-row');
                         } else {
                             rowteamBQ4.classList.remove('true-row');
@@ -353,7 +359,7 @@
                         document.getElementById('teamB-q5-false').checked = !!results.teamB.q5.false;
                         const rowteamBQ5 = document.getElementById('teamB-q5');
 
-                        if (results.teamB.q5.true > results.teamB.q5.false) {
+                        if ((answers.q5 && !!results.teamB.q5.true) || (!answers.q5 && !!results.teamB.q5.false == false)) {
                             rowteamBQ5.classList.add('true-row');
                         } else {
                             rowteamBQ5.classList.remove('true-row');

@@ -228,7 +228,7 @@
                     // Logic to display results can be added here
                     try {
                         const response = await fetch(`${serverUrl}/results`);
-                        const data = await response.json();
+                        const results = await response.json();
                         debugger
                         alert('Results: ' + JSON.stringify(data));
                         document.getElementById('teamA-q1-true').value = results.teamA.q1.true;

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting Tables</title>
+    <style>
+        body {
+            /* display: flex;
+            justify-content: center;
+            align-items: flex-start; */
+            height: 100vh;
+            margin: 0;
+            padding: 40px 20px 20px;
+            background-color: ivory;
+            /* Add padding from the top */
+        }
+
+        .tables-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            /* Increased margin for more space between tables */
+        }
+
+        .table-container {
+            width: 45%;
+            margin: 0 20px;
+            /* Increased margin for more space between tables */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 2px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            font-size: 23px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input[type="radio"] {
+            transform: scale(1.5);
+            /* Increase the size of radio buttons */
+        }
+
+        .show-results-btn {
+            text-align: center;
+            cursor: pointer;
+            height: 40px;
+            background-color: lightskyblue;
+            /* color: white; */
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 style="text-align: center;">WELCOME TO OUR WEB APPS QUIZ GAME</h1>
+    </div>
+    <div class="tables-container">
+        <div class="table-container">
+            <h1 style="text-align: center; color: blue;">FIRST TEAM</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>True</th>
+                        <th>False</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Is the sky blue?</td>
+                        <td><input type="radio" name="q1_left" value="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="q1_left" value="false" onclick="vote(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Do fish fly?</td>
+                        <td><input type="radio" name="q2_left" value="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="q2_left" value="false" onclick="vote(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Is fire hot?</td>
+                        <td><input type="radio" name="q3_left" value="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="q3_left" value="false" onclick="vote(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Is the sky blue?</td>
+                        <td><input type="radio" name="q4_left" value="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="q4_left" value="false" onclick="vote(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Do fish fly?</td>
+                        <td><input type="radio" name="q5_left" value="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="q5_left" value="false" onclick="vote(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Is fire hot?</td>
+                        <td><input type="radio" name="q6_left" value="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="q6_left" value="false" onclick="vote(this)"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-container">
+            <h1 style="text-align: center;color: red;">SECOND TEAM</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>True</th>
+                        <th>False</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Is the sky blue?</td>
+                        <td><input type="radio" name="q1_right" value="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="q1_right" value="false" onclick="vote(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Do fish fly?</td>
+                        <td><input type="radio" name="q2_right" value="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="q2_right" value="false" onclick="vote(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Is fire hot?</td>
+                        <td><input type="radio" name="q3_right" value="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="q3_right" value="false" onclick="vote(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Is the sky blue?</td>
+                        <td><input type="radio" name="q4_right" value="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="q4_right" value="false" onclick="vote(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Do fish fly?</td>
+                        <td><input type="radio" name="q5_right" value="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="q5_right" value="false" onclick="vote(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Is fire hot?</td>
+                        <td><input type="radio" name="q6_right" value="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="q6_right" value="false" onclick="vote(this)"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div style="    text-align: center;
+    margin-top: 20px;">
+        <button style="text-align: center;" class="show-results-btn" onclick="displayResults()">SHOW RESULTS</button>
+    </div>
+
+    <div class="tables-container" id="correct-answers" style="margin-top:20px; display: none;">
+        <div class="table-container">
+            <h1 style="text-align: center; color: forestgreen;">CORRECT ANSWERS</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Question</th>
+                        <th>True</th>
+                        <th>False</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Is the sky blue?</td>
+                        <td><input type="radio" name="a1_left" value="true" checked="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="a1_left" value="false" onclick="vote(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Do fish fly?</td>
+                        <td><input type="radio" name="a2_left" value="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="a2_left" value="false" checked="true" onclick="vote(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Is fire hot?</td>
+                        <td><input type="radio" name="a3_left" value="true" checked="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="a3_left" value="false" onclick="vote(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Is the sky blue?</td>
+                        <td><input type="radio" name="a4_left" value="true" checked="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="a4_left" value="false" onclick="vote(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Do fish fly?</td>
+                        <td><input type="radio" name="a5_left" value="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="a5_left" value="false" checked="true" onclick="vote(this)"></td>
+                    </tr>
+                    <tr>
+                        <td>Is fire hot?</td>
+                        <td><input type="radio" name="a6_left" value="true" checked="true" onclick="vote(this)"></td>
+                        <td><input type="radio" name="a6_left" value="false" onclick="vote(this)"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function vote(radio) {
+            const question = radio.name;
+            const answer = radio.value;
+            console.log(`Question: ${question}, Answer: ${answer}`);
+            // You can add further code to handle the voting logic, e.g., sending the vote to a server
+        }
+
+        function displayResults() {
+            const correctPassword = '123456'; // Replace with the actual password
+            if (document.getElementById('correct-answers').style.display == 'none') {
+                const password = prompt('Enter the password to view the results:');
+                if (password === correctPassword) {
+                    alert('Showing results...');
+                    // Logic to display results can be added here
+                    document.getElementById('correct-answers').style.display = 'flex';
+                } else {
+                    alert('Incorrect password! Please try again');
+                }
+            } else {
+                document.getElementById('correct-answers').style.display = 'none';
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

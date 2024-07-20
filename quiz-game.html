@@ -229,28 +229,28 @@
                     try {
                         const response = await fetch(`${serverUrl}/results`);
                         const results = await response.json();
-                        document.getElementById('teamA-q1-true').value = results.teamA.q1.true;
-                        document.getElementById('teamA-q1-false').value = results.teamA.q1.false;
-                        document.getElementById('teamA-q2-true').value = results.teamA.q2.true;
-                        document.getElementById('teamA-q2-false').value = results.teamA.q2.false;
-                        document.getElementById('teamA-q3-true').value = results.teamA.q3.true;
-                        document.getElementById('teamA-q3-false').value = results.teamA.q3.false;
-                        document.getElementById('teamA-q4-true').value = results.teamA.q4.true;
-                        document.getElementById('teamA-q4-false').value = results.teamA.q4.false;
-                        document.getElementById('teamA-q5-true').value = results.teamA.q5.true;
-                        document.getElementById('teamA-q5-false').value = results.teamA.q5.false;
+                        document.getElementById('teamA-q1-true').value = !!results.teamA.q1.true;
+                        document.getElementById('teamA-q1-false').value = !!results.teamA.q1.false;
+                        document.getElementById('teamA-q2-true').value = !!results.teamA.q2.true;
+                        document.getElementById('teamA-q2-false').value = !!results.teamA.q2.false;
+                        document.getElementById('teamA-q3-true').value = !!results.teamA.q3.true;
+                        document.getElementById('teamA-q3-false').value = !!results.teamA.q3.false;
+                        document.getElementById('teamA-q4-true').value = !!results.teamA.q4.true;
+                        document.getElementById('teamA-q4-false').value = !!results.teamA.q4.false;
+                        document.getElementById('teamA-q5-true').value = !!results.teamA.q5.true;
+                        document.getElementById('teamA-q5-false').value = !!results.teamA.q5.false;
 
 
-                        document.getElementById('teamB-q1-true').value = results.teamB.q1.true;
-                        document.getElementById('teamB-q1-false').value = results.teamB.q1.false;
-                        document.getElementById('teamB-q2-true').value = results.teamB.q2.true;
-                        document.getElementById('teamB-q2-false').value = results.teamB.q2.false;
-                        document.getElementById('teamB-q3-true').value = results.teamB.q3.true;
-                        document.getElementById('teamB-q3-false').value = results.teamB.q3.false;
-                        document.getElementById('teamB-q4-true').value = results.teamB.q4.true;
-                        document.getElementById('teamB-q4-false').value = results.teamB.q4.false;
-                        document.getElementById('teamB-q5-true').value = results.teamB.q5.true;
-                        document.getElementById('teamB-q5-false').value = results.teamB.q5.false;
+                        document.getElementById('teamB-q1-true').value = !!results.teamB.q1.true;
+                        document.getElementById('teamB-q1-false').value = !!results.teamB.q1.false;
+                        document.getElementById('teamB-q2-true').value = !!results.teamB.q2.true;
+                        document.getElementById('teamB-q2-false').value = !!results.teamB.q2.false;
+                        document.getElementById('teamB-q3-true').value = !!results.teamB.q3.true;
+                        document.getElementById('teamB-q3-false').value = !!results.teamB.q3.false;
+                        document.getElementById('teamB-q4-true').value = !!results.teamB.q4.true;
+                        document.getElementById('teamB-q4-false').value = !!results.teamB.q4.false;
+                        document.getElementById('teamB-q5-true').value = !!results.teamB.q5.true;
+                        document.getElementById('teamB-q5-false').value = !!results.teamB.q5.false;
 
                     } catch (error) {
                         console.error('Error:', error);
